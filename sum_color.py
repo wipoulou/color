@@ -1,19 +1,23 @@
 def avg_color(output):
     """ Image est un output de camera """
     
+    #Tiré directement de la documentation
     image = output.array.shape[1]
 
-
+    #Taille de l'image pour savoir la division qu'il faut faire
     size_h = len(image)
     size_l = len(image[0])
 
+    #Initialisation du tableau qui va stocker les valeurs avg
     avg = [0, 0, 0]
 
+    #Itération sur tous les pixels de l'image
     for line in image:
         for pixel in line:
             for i in range(len(avg)):
                 avg[i] += pixel[i]
 
+    #Return la valeur moyenne des pixels
     return [(avg[i]/(size_h*size_l)) for i in range(3)]
 
 

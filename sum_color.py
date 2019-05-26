@@ -22,11 +22,14 @@ def avg_color(output):
 
 
 def match_color(color):
-    if(color[0] > color[1] and color[0] > color[2]):
+    red = color[0]
+    green = color[1]
+    blue = color[2]
+    if(red > green and red > blue):
         return "red"
-    elif(color[1] > color[0] and color[1] > color[2]):
+    elif(green > red and green > blue):
         return "green"
-    elif(color[2] > color[1] and color[2] > color[0]):
+    elif(blue > green and blue > red):
         return "blue"
     else:
         return "Pas de cube"

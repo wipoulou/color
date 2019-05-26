@@ -42,15 +42,15 @@ color_dic = {
     "yellow": (255, 255, 0),
 }
 
-def find_color(color, tolerance=80, dic=color_dic):
-
-    best = ("none", 0)
+def find_color(color, tolerance=20.0, dic=color_dic):
+    tolerance=float(tolerance)
+    
+    best = ("none", 100.0-tolerance)
 
     for sample in color_dic:
-        avg = [abs(sample[i]-color[i]) for i in range(3)]
-        fit = (avg[0]+avg[1]+avg[2])/3
-
-        if fit > tolerance and fit > best[0]:
-            best = (color_dic, fit)
+        avg = [abs(color_dic[sample][i]-color[i]) for i in range(3)]
+        fit = ((avg[0]+avg[1]+avg[2])/255*100)/3
+        if fit < tolerance and fit < best[1]:
+            best = (sample, fit)
 
     return best

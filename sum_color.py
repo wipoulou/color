@@ -40,6 +40,7 @@ color_dic = {
     "green": (0, 255, 255),
     "blue": (0, 0, 255),
     "yellow": (255, 255, 0),
+    "purple": (255, 0, 255),
 }
 
 def find_color(color, tolerance=20.0, dic=color_dic):

@@ -18,7 +18,7 @@ def avg_color(output):
                 avg[i] += pixel[i]
 
     #Return la valeur moyenne des pixels
-    return [(avg[i]/(size_h*size_l)) for i in range(3)]
+    return [(avg[i]/(size_h*size_l)) for i in range(len(avg))]
 
 
 def match_color(color):

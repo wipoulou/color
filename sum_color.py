@@ -1,7 +1,7 @@
 def avg_color(output):
     """ Image est un output de camera """
     
-    camera = output.array.shape[1]
+    image = output.array.shape[1]
 
 
     size_h = len(image)
@@ -11,7 +11,7 @@ def avg_color(output):
 
     for line in image:
         for pixel in line:
-            for i in range(2)
+            for i in range(len(avg)):
                 avg[i] += pixel[i]
 
     return [(avg[i]/(size_h*size_l)) for i in range(3)]
